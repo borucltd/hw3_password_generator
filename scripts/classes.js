@@ -1,58 +1,129 @@
 // Class classPassword contains definition for password objects
-class classPassword {
-
-    // Default attributes = values
-    minimum_length = 1;
-    maximum_length = 128;
-    lowercase_characters = true;
-    uppercase_characters = true;
-    numeric_characters = true;
-    special_characters = true;
-
-    // Constructor
-    constructor(min_l, max_l, lower, upper, numeric, special) {
-        
-        // if constructor without parameter(s) then use the default one(s)
-        this.minimum_length = (typeof min_l === 'undefined') ? this.minimum_length : min_l;
-        this.maximum_length = (typeof max_l === 'undefined') ? this.maximum_length : max_l;
-        this.lowercase_characters = (typeof lower === 'undefined') ? this.lowercase_characters : lower ;
-        this.uppercase_characters = (typeof upper === 'undefined') ? this.uppercase_characters : upper;
-        this.numeric_characters = (typeof numeric === 'undefined') ? this.numeric_characters : numeric;
-        this.special_characters = (typeof special === 'undefined') ? this.special_characters : special;
-
-        // initial password to be always empty_password
-        this.password = "empty_password";
-    }
-
-    // Methods
-    generate_password() {
-
-        console.log("generating password");
-
-    }
-    print_2_console() {
-        console.log(this);
-    }
-
-};
 
 // Class classDictionary contains definitions for dictionary
 // Dictionary is a set of characters which are used to choose from when generating password
 class classDictionary {
-    constructor(min_l, max_l, lower, upper, numeric, special) {
-        
-        // we always use pre-defined sets of characters
-        this.lowercare_set = "abcdefghijklmnopqrstuvwxyz";
-        this.uppercase_set = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-        this.numeric_set = "0123456789";
-        // before " I had to add \
-        this.special_set = " !\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
+
+    // Immutable set of character sets
+    lowercare_set = 'abcdefghijklmnopqrstuvwxyz';
+    uppercase_set = '"ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    numeric_set = '0123456789';
+    special_set = " !\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
+    dictionary="";
+
+    // Initiates immutable string dictionary
+    constructor(lower, upper, numeric, special) {
+
+        if (lower === false && upper === false && numeric === false && special === false) {
+
+            alert("Error: you should specify some characters !!!");
+            
+        } else {
+            
+            if (lower) {
+                this.dictionary+=this.lowercare_set;
+            } 
+            
+            if (upper){
+                this.dictionary+=this.uppercase_set;
+
+            } 
+            
+            if (numeric) {
+                this.dictionary+=this.numeric_set;
+
+            } 
+            
+            if (special) {
+                this.dictionary+=this.special_set;
+            } 
+        }
 
     }
 
+    // I wanted to add more randomization... so I though it would be
+    // good to shuffle different sets of characters into one array
+    // and then select from this array
+    // Algorithm taken from https://bost.ocks.org/mike/shuffle/
+    // Fisher–Yates Shuffle
+    shuffle_dictionary() {
+        
+        let dictionary_length = this.dictionary.length;
+        let t, i;
+        // We need ARRAY and not immutable string
+        let final_dictionary=Array.from(this.dictionary);
+
+        // While there remain elements to shuffle…
+        while (dictionary_length) {
+            
+        // Pick a remaining element…
+        i = Math.floor(Math.random() * dictionary_length--);
+            
+        // And swap it with the current element.
+        t = final_dictionary[dictionary_length];
+
+        final_dictionary[dictionary_length] = final_dictionary[i];
+        final_dictionary[i] = t;
+        }
+
+        return final_dictionary;
+    }
+
+    // Prints out the object
     print_2_console() {
         console.log(this);
     }
 
 };
+
+class classPassword {
+
+    // Default attributes = values
+    minimum_length = 8;
+    maximum_length = 128;
+    length = 8;
+
+    // Constructor
+    constructor(user_length) {
+        
+        // if constructor without parameter(s) then use the default one(s)
+        if ( user_length >= this.minimum_length && user_length <= this.maximum_length  ) {
+            this.length  = user_length;
+        } else {
+            alert("Error: your length is out of range. Minimum length = " + this.minimum_length + " , maximum length = " + this.maximum_length); 
+        }
+    }
+
+    // Generates password from the dictionary
+    generate_password(dict) {
+
+        console.log(dict);
+        let dict_length = dict.length;
+        let selector=0;
+
+        // Initiate empty array
+        let ran_password=[];
+        // For each element we will choose random value from dictionary  
+        for (var i = 0; i < this.length; i++) {
+            
+            // Random index from 0 to length of dictionary
+            selector=Math.floor(Math.random() * dict_length + 1);
+            // Assign random character from dictionary to ran_password
+            ran_password[i] = dict[selector];
+        }
+    
+        return ran_password.join("");
+    }           
+    
+
+    // Prints out the object
+    print_2_console() {
+        console.log(this);
+    }
+
+};
+
+
+
+
 
