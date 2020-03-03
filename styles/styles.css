@@ -1,0 +1,14 @@
+
+
+.left-bottom {
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+
+@media (min-width:1000px){
+    .left_bottom{
+        border-top-right-radius: 15px;
+        border-bottom-left-radius: 15px;
+    }
+}
