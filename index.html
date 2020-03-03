@@ -10,6 +10,71 @@
 </head>
 
 <body>
+
+    <header class="container">
+        <section class="row">
+            <section class="col-12">
+                <h1>Time to go secure.</h1>
+            </section>
+        </section>
+    </header>
+
+    <main class="container">
+
+        <section class="row">
+            <section class="col-lg-4 col-md-4 col-sm-4 bg-warning p-lg-5 p-md-5 p-sm-5 p-xs-5   ">
+                <button id="btn_start" type="button" class="btn btn-info btn-lg btn-block">START</button>
+                <button id="btn_generate" type="button" class="btn btn-info btn-lg btn-block">GENERATE</button>
+            </section>
+
+            <section class="col-lg-8 col-md-8 col-sm-8 bg-info">
+
+                <div class="form-group row">
+                    <label for="password_length" class="col-2 col-form-label">Length:</label>
+                    <div class="col-lg-2 col-md-2 col-sm-2">
+                      <input class="form-control" type="number" value="8" id="password_length">
+                    </div>
+                  </div>
+                 
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="check_upper">
+                    <label class="form-check-label" for="check_upper">Check to include uppercase.</label>
+                </div>
+
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="check_lower">
+                    <label class="form-check-label" for="check_lower">Check to include lowercase.</label>
+                </div>
+
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="check_numbers">
+                    <label class="form-check-label" for="check_numbers">Check to include numbers.</label>
+                </div>
+
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="check_special">
+                    <label class="form-check-label" for="check_special">Check to include special characters.    </label>
+                </div>
+
+                  
+            </section>       
+        </section>
+
+        <section class="row">
+            <section class="col-lg-12 col-md-12 col-sm-12 bg-warning p-lg-5 p-md-5 p-sm-5 p-xs-5">
+                <section class="progress">
+                    <section id="progress_bar" class="progress-bar" role="progressbar" aria-valuenow="0"
+                    aria-valuemin="0" aria-valuemax="100" style="width:70%">
+                      <span class="sr-only">70% Complete</span>
+                </section>
+            </section>
+            </section>       
+        </section>
+    </main>
+
+   
+
+
     
     <!-- Bootstrap scripts -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
@@ -17,8 +82,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
     <!-- Custom scripts -->
-    <script src="./scripts/classes.js" type="text/javascript"></script>
-    <script src="./scripts/password_generator.js" type="text/javascript"></script>
+    <!-- <script src="./scripts/classes.js" type="text/javascript"></script> -->
+    <script src="./scripts/password_generator.js" type="text/javascript"></script> 
 </body>
 
 </html>
