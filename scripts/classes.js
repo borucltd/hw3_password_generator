@@ -46,7 +46,7 @@ class classDictionary {
     // Fisher–Yates Shuffle
     shuffle_dictionary() {
 
-        // Some variables
+        // Some varia                                                                                       es
         let t, i;
         let dictionary_length = this.dictionary.length;
         
@@ -99,7 +99,7 @@ class classPassword {
     }
 
     // Generates password from the dictionary
-    generate_password(dict,bar) {
+    generate_password(dict,result) {
 
         // Some variables
         let dict_length = dict.length;
@@ -116,12 +116,18 @@ class classPassword {
             // Assign random character from dictionary to ran_password
             ran_password[i] = dict[selector];
 
-            // update progress_bar
-          //  console.log(bar.aria-valuenow);
         }
     
         // Returns a string generated from the array
         this.password = ran_password.join("");
+          
+        
+        var h = document.createElement("H1");
+        var t = document.createTextNode(this.password); 
+        
+        h.appendChild(t); 
+        result.appendChild(h);
+        
     }           
     
     // Prints out the object
