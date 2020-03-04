@@ -32,21 +32,22 @@ document.getElementById("btn_start").onclick  = function () {
 document.getElementById("btn_generate").onclick  = function () {
 
     let user_length=document.getElementById("password_length").value;
-    let user_lower=document.getElementById("check_lower").value;
-    let user_upper=document.getElementById("check_upper").value;
-    let user_numerical=document.getElementById("check_numbers").value;
-    let user_special=document.getElementById("check_special").value;
+    let user_lower=document.getElementById("check_lower").checked;
+    let user_upper=document.getElementById("check_upper").checked;
+    let user_numerical=document.getElementById("check_numbers").checked;
+    let user_special=document.getElementById("check_special").checked;
 
     // Create initial dictionary
     let dictionary = new classDictionary(user_lower,user_upper,user_numerical,user_special);
-    // Shuffle characters within the dictionary
-    random_dictionary = dictionary.shuffle_dictionary();
+    
+  
+    
 
     // Create initial empty password
     let password = new classPassword(user_length,user_lower,user_upper,user_numerical,user_special);
     
     // Generate and print out password
-    password.generate_password(random_dictionary);
+    password.generate_password(dictionary.shuffle_dictionary(),document.getElementById("section_progressbar"));
     password.print_2_console();
 
 };

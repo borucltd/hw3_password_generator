@@ -4,7 +4,7 @@ class classDictionary {
 
     // Immutable set of character sets
     lowercare_set = "abcdefghijklmnopqrstuvwxyz";
-    uppercase_set = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    uppercase_set = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     numeric_set = "0123456789";
     special_set = " !\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
     dictionary="";
@@ -99,7 +99,7 @@ class classPassword {
     }
 
     // Generates password from the dictionary
-    generate_password(dict) {
+    generate_password(dict,bar) {
 
         // Some variables
         let dict_length = dict.length;
@@ -116,6 +116,8 @@ class classPassword {
             // Assign random character from dictionary to ran_password
             ran_password[i] = dict[selector];
 
+            // update progress_bar
+          //  console.log(bar.aria-valuenow);
         }
     
         // Returns a string generated from the array
@@ -128,3 +130,4 @@ class classPassword {
     }
 
 };
+
