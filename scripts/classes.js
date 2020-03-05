@@ -1,3 +1,5 @@
+'use strict';
+
 // Class classDictionary contains definitions for dictionary
 // Dictionary is a set of characters which are used to choose from when generating password
 class classDictionary {
@@ -7,6 +9,8 @@ class classDictionary {
     uppercase_set = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     numeric_set = "0123456789";
     special_set = " !\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
+
+    // empty dictionary
     dictionary="";
 
     // Initiates immutable string dictionary
@@ -48,30 +52,36 @@ class classDictionary {
 
         // Some varia                                                                                       es
         let t, i;
-        let dictionary_length = this.dictionary.length;
         
         // We need ARRAY and NOT immutable string
         let final_dictionary=Array.from(this.dictionary);
 
-        // While there remain elements to shuffle…
+        // Size of dictionary ARRAY
+        let dictionary_length = this.final_dictionary;
+
+        // We start shuffling from the END of the dictionary
         while (dictionary_length) {
             
-            // Pick a remaining element…
+            // Random index from 0 to dictionary length -1
+            // This also decrements dictionaty_length
             i = Math.floor(Math.random() * dictionary_length--);
                 
-            // And swap it with the current element.
+            // Actual "current last element"
             t = final_dictionary[dictionary_length];
+
+            // Replace "current last element" with the random one
             final_dictionary[dictionary_length] = final_dictionary[i];
+
+            // Move the "current last element" so we don't loose it
             final_dictionary[i] = t;
 
         }
 
-        // Returns the final dictionary
-        this.dictionary = final_dictionary;
+        // Returns the final SHUFFLED dictionary
         return final_dictionary;
     }
 
-    // Prints out the object
+    // Prints out the object for debugging
     print_2_console() {
         console.log(this.dictionary);
     }
@@ -94,6 +104,7 @@ class classPassword {
         if ( user_length >= this.minimum_length && user_length <= this.maximum_length  ) {
             this.length  = user_length;
         } else {
+            // HERE WE NEED SOMETHING LIKE DYNAMIC HTML
             alert("Error: your length is out of range. Minimum length = " + this.minimum_length + " , maximum length = " + this.maximum_length + " ."); 
         }
     }
@@ -108,7 +119,7 @@ class classPassword {
         // Initiate empty array which will be final password
         let ran_password=[];
 
-        // We iterate over final password
+        // We iterate over final password from the FIRST element
         for (var i = 0; i < this.length; i++) {
             
             // Random index from 0 to length of dictionary
@@ -120,9 +131,12 @@ class classPassword {
     
         // Returns a string generated from the array
         this.password = ran_password.join("");
+
+        // HERE WE NEED SOMETHING LIKE DYNAMIC HTML
           
         
         var h = document.createElement("H1");
+        h.setAttribute('class', 'my-3');
         var t = document.createTextNode(this.password); 
         
         h.appendChild(t); 
@@ -130,7 +144,7 @@ class classPassword {
         
     }           
     
-    // Prints out the object
+    // Prints out the object for debugging
     print_2_console() {
         console.log(this.password);
     }
