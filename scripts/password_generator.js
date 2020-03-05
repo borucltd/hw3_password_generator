@@ -44,9 +44,10 @@ document.getElementById("btn_generate").onclick  = function () {
     let password = new classPassword(user_length);
     
     // Generate and print out password
-    password.generate_password(dictionary.shuffle_dictionary(),document.getElementById("section_password"));
-
-
+    password.generate_password(dictionary.shuffle_dictionary());
+    // Show password
+    password.show_password(document.getElementById("section_password"));
+   
     //password.print_2_console();
 
 };

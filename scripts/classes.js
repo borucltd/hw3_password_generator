@@ -110,7 +110,7 @@ class classPassword {
     }
 
     // Generates password from the dictionary
-    generate_password(dict,result) {
+    generate_password(dict) {
 
         // Some variables
         let dict_length = dict.length;
@@ -130,20 +130,34 @@ class classPassword {
         }
     
         // Returns a string generated from the array
-        this.password = ran_password.join("");
-
-        // HERE WE NEED SOMETHING LIKE DYNAMIC HTML
-          
-        
-        var h = document.createElement("H1");
-        h.setAttribute('class', 'my-3');
-        var t = document.createTextNode(this.password); 
-        
-        h.appendChild(t); 
-        result.appendChild(h);
-        
+        // Password will be stored in the object
+        this.password = ran_password.join("");       
     }           
     
+    // Dynamic HTML, result is a section where it will be created
+    show_password(result) {
+
+        let password_header = document.createElement("H1");
+        let password_text = document.createElement("INPUT");
+        let password_copy_button = document.createElement("BUTTON");
+
+        password_header.setAttribute('class', 'my-3');
+        password_text.setAttribute('value',this.password);
+        // width of the input element depends on password length
+        password_text.setAttribute('size',this.password.length);
+        password_copy_button.innerHTML="Copy";
+
+        password_text.innerTex = this.password;
+
+        result.appendChild(password_header);
+        result.appendChild(password_text);
+        result.appendChild(password_copy_button);
+
+        console.log(this.password);
+
+
+
+    }
     // Prints out the object for debugging
     print_2_console() {
         console.log(this.password);

@@ -34,7 +34,7 @@
             <section class="col-lg-8 col-md-8 col-sm-6 pt-3 bg-info">
 
                 <section id="section_length" class="form-group row">
-                    <section class="col-6">
+                    <section class="col-lg-6 col-md-6 col-sm-6">
                         <label for="password_length" class="col-form-label">Length:</label>
                         <!-- I could set min/max to 8-128 here, but lets say this will be checked in the script -->
                         <input id="password_length" class="form-control" type="number" value="8" min="0">
@@ -64,14 +64,19 @@
                   
             </section>       
         </section>
+    </main>
 
-         <!-- bottom row where passwords are displayed -->
+    <!-- Header section -->
+    <footer class="container">
+        <!-- bottom row where passwords are displayed -->
        <section class="row">
             <section  id="section_password" class="col-lg-12 col-md-12 col-sm-12 bg-warning p-lg-5 p-md-5 p-sm-5 p-xs-5 bg-warning rounded-bottom">
                 <!-- here the dumanim HTML will be created by JavaScript. -->
             </section>
         </section> 
-    </main>
+    </footer>
+         
+   
     
     <!-- Bootstrap scripts -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
