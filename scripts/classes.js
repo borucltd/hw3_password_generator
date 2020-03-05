@@ -143,19 +143,37 @@ class classPassword {
 
         password_header.setAttribute('class', 'my-3');
         password_text.setAttribute('value',this.password);
+        password_text.setAttribute('class','bg-danger');
         // width of the input element depends on password length
         password_text.setAttribute('size',this.password.length);
+        password_copy_button.setAttribute('class','bg-info');
         password_copy_button.innerHTML="Copy";
 
         password_text.innerTex = this.password;
 
+
+        //password_copy_button.setAttribute( "onClick", "myFunction("+VALUE+");" )
+
+        // Add all HTML elements to section "result"
         result.appendChild(password_header);
         result.appendChild(password_text);
         result.appendChild(password_copy_button);
 
-        console.log(this.password);
+        password_copy_button.onclick = () => { 
 
+            //select password
+            password_text.select();
+            //password_text.setSelectionRange(0, 99999); /*For mobile devices*/
+            
+            // erhmm copy?
+            document.execCommand("copy");
 
+            //clear selection (googled that one...)
+            password_text.blur();
+
+            //fancy color when copied
+            password_text.setAttribute('class','bg-success');
+         }
 
     }
     // Prints out the object for debugging
