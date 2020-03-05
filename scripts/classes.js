@@ -163,7 +163,7 @@ class classPassword {
 
             //select password
             password_text.select();
-            password_text.setSelectionRange(0, 99999); /*For mobile devices*/
+            //password_text.setSelectionRange(0, 99999); /*For mobile devices*/
             
             // erhmm copy?
             document.execCommand("copy");
