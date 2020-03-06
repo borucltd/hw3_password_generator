@@ -143,7 +143,8 @@ class classPassword {
 
         password_header.setAttribute('class', 'my-3');
         password_text.setAttribute('value',this.password);
-        password_text.setAttribute('class','bg-danger');
+        // Add form-control class which automatically gives me responsivness :) bootstrap !!!
+        password_text.setAttribute('class','bg-danger form-control');
         // width of the input element depends on password length
         password_text.setAttribute('size',this.password.length);
         password_copy_button.setAttribute('class','bg-info');
