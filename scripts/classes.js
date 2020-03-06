@@ -147,8 +147,8 @@ class classPassword {
         password_text.setAttribute('class','bg-danger form-control');
         // width of the input element depends on password length
         password_text.setAttribute('size',this.password.length);
-        password_copy_button.setAttribute('class','bg-info');
-        password_copy_button.innerHTML="Copy";
+        password_copy_button.setAttribute('class','bg-info btn btn-primary form-control mt-3');
+        password_copy_button.innerHTML="Copy to clipboard.";
 
         password_text.innerTex = this.password;
 
@@ -173,7 +173,7 @@ class classPassword {
             password_text.blur();
 
             //fancy color when copied
-            password_text.setAttribute('class','bg-success');
+            password_text.setAttribute('class','bg-success form-control');
          }
 
     }
