@@ -16,7 +16,7 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes
 
   
 # Example
-![image](./PASSWORD.PNG)
+![image](https://adelaidebootcamp.s3-ap-southeast-2.amazonaws.com/PASSWORD.PNG)
 
 
 # Built With
