@@ -1,21 +1,19 @@
-'use strict';
-
 // Class classDictionary contains definitions for dictionary
 // Dictionary is a set of characters which are used to choose from when generating password
 class classDictionary {
 
-    // Immutable set of character sets
-    lowercare_set = "abcdefghijklmnopqrstuvwxyz";
-    uppercase_set = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    numeric_set = "0123456789";
-    special_set = " !\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
+      // empty dictionary
+      dictionary=" ";
 
-    // empty dictionary
-    dictionary="";
-
+      // Immutable set of character sets
+      lowercare_set = "abcdefghijklmnopqrstuvwxyz";
+      uppercase_set = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+      numeric_set = "0123456789";
+      special_set = " !\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
+  
     // Initiates immutable string dictionary
     constructor(lower, upper, numeric, special) {
-
+    
         if (lower === false && upper === false && numeric === false && special === false) {
 
             alert("Error: you should specify some characters !!!");
@@ -90,16 +88,17 @@ class classDictionary {
 
 
 // Class classPassword contains definitions for password
-class classPassword {
+class classPassword  {
 
-    // Default attributes = values
+    length;
     minimum_length = 8;
     maximum_length = 128;
-    length = 8;
-
+  
     // Constructor
     constructor(user_length) {
-        
+
+        // Default attributes = values
+    
         // if we create object without parameter(s) then use the default one(s)
         if ( user_length >= this.minimum_length && user_length <= this.maximum_length  ) {
             this.length  = user_length;
@@ -183,4 +182,3 @@ class classPassword {
     }
 
 };
-

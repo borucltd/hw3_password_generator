@@ -6,11 +6,18 @@ Open the web page in your browser, clikc Start button. Select the length and typ
 
 # Prerequisites
 You just need a web browser. The project was tested on:
-- desktop Chrome, Firefox, Edge
-- mobile Chrome
+- desktop Chrome, Firefox
+- mobile Chrome, Firefox
+
+There were errors on Edge due to the way it handles the public attributes in class definition. Need to update Edge to the latest version. Check here:
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes
+
+
   
 # Example
-! [PASSWORD] (https://github.com/borucltd/hw3_password_generator/tree/master/scripts/PASSWORD.JPG)
+![image](./PASSWORD.PNG)
+
 
 # Built With
 To build this project I used:

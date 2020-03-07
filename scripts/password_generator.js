@@ -1,6 +1,8 @@
 // Hide some elements of the website
 // Array of sections
+
 let sections = [ "length","upper","lower","numbers","special","password"];
+
 
 document.getElementById("btn_generate").style.display = "none";
 
@@ -10,13 +12,12 @@ for (var i = 0; i < sections.length; i++){
     document.getElementById("section_"+sections[i]).style.display = "none";
 }
 
-
 // onclick START button
 // and initiate variables
 document.getElementById("btn_start").onclick  = function () {
 
     document.getElementById("btn_generate").style.display = "block";
-
+    
     for (var i = 0; i < sections.length; i++){
 
         document.getElementById("section_"+sections[i]).style.display = "block";
@@ -34,6 +35,8 @@ document.getElementById("btn_generate").onclick  = function () {
     let user_numerical=document.getElementById("check_numbers").checked;
     let user_special=document.getElementById("check_special").checked;
     
+
+
     // Clear HTML section responsible for password
     document.getElementById("section_password").innerHTML="";
 
