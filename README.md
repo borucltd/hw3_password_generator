@@ -10,7 +10,7 @@ You just need a web browser. The project was tested on:
 - mobile Chrome
   
 # Example
-! [PASSWORD] (PASSWORD.JPG)
+! [PASSWORD] (https://github.com/borucltd/hw3_password_generator/tree/master/scripts/PASSWORD.JPG)
 
 # Built With
 To build this project I used:
